@@ -2,7 +2,7 @@
 	background-color: #fef68a;
 	border-radius: 10px;
 	padding: 1rem;
-	min-height: 170px;
+	min-height: 250px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -28,6 +28,6 @@
       outline: none;
   }
 
-.btn-star {
+.fa-star {
 	cursor: pointer;
 }
