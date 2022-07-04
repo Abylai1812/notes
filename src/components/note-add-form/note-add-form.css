@@ -12,6 +12,10 @@
 .note.new {
 	background-color: #67d7cc;
 }
+.title {
+	margin: 0;
+	padding: 0;
+}
 
 textarea {
 	border: none;

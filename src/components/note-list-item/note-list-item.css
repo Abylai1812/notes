@@ -8,6 +8,10 @@
 	justify-content: space-between;
 	white-space: pre-wrap;
 }
+.title {
+	margin: 0;
+	padding: 0;
+}
 
 .note-footer {
 	display: flex;
@@ -15,19 +19,19 @@
 	justify-content: space-between;
 }
 
-.note-footer-item button {
-    width: 35px;
-    height: 35px;
-    margin: 3px;
+.note-footer button {
     font-size: 17px;
     border: none;
     cursor: pointer;
   }
-  .note-footer-item button:focus {
+  .note-footer button:focus {
       box-shadow: none;
       outline: none;
   }
 
 .fa-star {
 	cursor: pointer;
+}
+.important {
+	color: #e5383b;
 }
