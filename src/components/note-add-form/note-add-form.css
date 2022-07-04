@@ -11,6 +11,7 @@
 }
 .note.new {
 	background-color: #67d7cc;
+	margin-bottom: 0;
 }
 .title {
 	margin: 0;

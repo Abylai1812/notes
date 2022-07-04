@@ -8,9 +8,9 @@ import './app.css';
 
 function App() {
     const data =  [ 
-        {title:"Note 1",important:true,span:"Contrary to popular belief, Lorem Ipsum is not simply random text."},
-        {title:"Note 2",important:false, span:"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested."},
-        {title:"Note 3",important:false, span:"Sections 1.10.32 and 1.10.33 from end"}
+        {title:"Note 1",important:true,id:1,text:"Contrary to popular belief, Lorem Ipsum is not simply random text."},
+        {title:"Note 2",important:false,id:2,text:"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested."},
+        {title:"Note 3",important:false,id:3,text:"Sections 1.10.32 and 1.10.33 from end"}
     ]
 
     return (
@@ -23,7 +23,9 @@ function App() {
             </div>
             <AppFilter/>  
                 <NoteAddForm/>
-                <NoteList data={data}/>
+                <NoteList 
+                    data={data}
+                    onDelete={id => console.log(id)}/>
                 
         </div>
     )
