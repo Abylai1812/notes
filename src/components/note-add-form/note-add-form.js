@@ -17,12 +17,22 @@ class NoteAddForm extends Component {
         })
     }
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        if(this.state.text.length < 5) return;
+        this.props.onAdd(this.state.title, this.state.text);
+        this.setState({
+            title:'',
+            text: ''
+        })
+    }
     
     render() {
         const {title,text} = this.state;
         
         return (
-            <div className='note new'>
+            <form className='note new'
+                  onSubmit={this.onSubmit}>
                 <h5 className='title'>
                     <textarea placeholder='Note title'
                               onChange={this.onValueChange}
@@ -42,11 +52,14 @@ class NoteAddForm extends Component {
                     <small>
                         Remaining
                     </small>
-                    <button type="button" className='save'>
+                    <button 
+                        type="submit" 
+                        className='save'
+                        >
                         Save
                     </button>
                 </div>
-            </div>
+            </form>
         )
     }
 }
