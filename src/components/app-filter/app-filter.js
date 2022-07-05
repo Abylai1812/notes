@@ -2,13 +2,13 @@ import "./app-filter.css";
 
 const AppFilter = (props) => {
 
-    const buttonsData = [ {name:'all', label: 'All Notes'},
-                          {name:'important', label:'Important Notes'}
-                        ];
+    const buttonsData = [ 
+        {name:'all', label: 'All Notes'},
+        {name:'important', label:'Important Notes'}  ];
 
     const buttons = buttonsData.map(({name,label}) => {
         const active = props.filter === name;
-        const clazz = active ? 'btn-dark' : 'btn-outline-dark';
+        const clazz = active ? 'btn-dark':'btn-outline-dark';
         
         return (
             <button type="button"

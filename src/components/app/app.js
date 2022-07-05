@@ -18,7 +18,7 @@ class App  extends Component {
                 {title:"Note 3",important:false,id:3,date:'15.12.2022',text:"Sections 1.10.32 and 1.10.33 from end"}
             ],
             term:'',
-            filter:'all'
+            filter: 'all'
         }
         this.maxId = 4
     }
@@ -53,7 +53,7 @@ class App  extends Component {
         }))
     }
 
-    searchEmp = (items,term) => {
+    searchNote = (items,term) => {
         if(term.length === 0) {
             return items;
         } return items.filter(item => {
@@ -80,7 +80,7 @@ class App  extends Component {
         const {data,term,filter} = this.state;
         const notes = data.length;
         const importanted = data.filter(item => item.important).length;
-        const visibleData = this.filterPost(this.searchEmp(data,term),filter);
+        const visibleData = this.filterPost(this.searchNote(data,term),filter);
 
         return (
             <div className="app">
@@ -92,7 +92,7 @@ class App  extends Component {
                         onUpdateSearch={this.onUpdateSearch}/>    
                 </div>
                     <AppFilter
-                       filter={this.filter}
+                       filter={filter}
                        onFilterSelect={this.onFilterSelect} />  
                     <NoteAddForm
                         onAdd={this.addItem}/>
