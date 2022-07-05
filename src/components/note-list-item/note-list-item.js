@@ -1,25 +1,8 @@
-import {Component} from 'react';
-
 import './note-list-item.css';
 
-class NoteListItem extends Component  {
-    constructor(props) {
-        super(props);
-        this.state = {
-            important:false
-        }
-    }
+const NoteListItem = (props) => {
 
-    onImportant = () => {
-        this.setState(({important}) => ({
-            important: !important
-        }))
-    }
-
-
-    render() { 
-        const {title,text,onDelete} = this.props;
-        const {important} = this.state;
+        const {title,text,onDelete,onToggleImportant,important,date} = props;
          
         let classNames = "btn-star btn-sm";
         if ( important ) {
@@ -31,7 +14,7 @@ class NoteListItem extends Component  {
                 <h5 className="title"> {title} </h5>
                 <span>{text}</span>
                 <div className="note-footer">
-                    <small>31.02.2022</small>
+                    <small>{date}</small>
                     <button type="button"
                             className="btn-trash btn-sm"
                             onClick={onDelete}>
@@ -39,7 +22,7 @@ class NoteListItem extends Component  {
                         </button>
                     <button type="button"
                             className={classNames}
-                            onClick={this.onImportant}>
+                            onClick={onToggleImportant}>
                         <i className="fas fa-star"></i>
                     </button>
                 </div>
@@ -48,6 +31,6 @@ class NoteListItem extends Component  {
 
     }
     
-}
+
 
 export default NoteListItem;
